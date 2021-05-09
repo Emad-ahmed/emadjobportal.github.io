@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+{% if messages %}
+<div class="alert alert-warning alert-dismissible fade show messages" role="alert">
+    {% for message in messages %}
+    <p {% if message.tags %} class="{{ message.tags }} jio" {% endif %}>{{ message }}</p>
+    {% endfor %}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+
+<h1 class="text-center p-3">Signup</h1>
+
+<div class="container">
+    <div class="jumbotron box-shadow main1">
+        <form action="" method="post" novalidate enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for fm in form %}
+            {{fm.label_tag}} {{fm}} <small class="text-center text-danger">{{fm.errors|striptags}} <br></small>
+            {% endfor %}
+            <div class="text-center mt-5">
+                <input type="submit" value="Submit" class="btn btn-info">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+ul{
+    list-style: none;
+    display: flex;
+    
+}
+
+ul li label{
+    margin-right: 20px;
+}
+
+label{
+    margin-top: 3%;
+    padding: 6px;
+    color: aliceblue;
+}
+
+.main1{
+    width: 80%;
+    margin:auto;
+    box-shadow: 10px 10px 10px 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,5,34,1) 30%, rgba(14,14,31,1) 92%, rgba(6,5,34,1) 99%, rgba(0,212,255,1) 100%);    
+}
+
+.jio{
+    align-items: center;
+}
